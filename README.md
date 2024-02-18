@@ -1,5 +1,7 @@
 # snowballGame
 
+![alt text](figures/snowBallGame.png)
+
 Final project of the Udemy course Learn Advanced Modern C++. In the game, the players objective is to hit all bricks with a snowball using arrow keys on the keyboard.
 
 In the game the user interacts with a few button clicks:
