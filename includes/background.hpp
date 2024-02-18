@@ -11,7 +11,6 @@ class background : public entity
 public:
 	background(float x, float y);
 
-	// Implement the pure virtual functions
 	void update() override;
 	void draw(sf::RenderWindow &window) override;
 };

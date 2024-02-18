@@ -11,7 +11,6 @@ class snowboard : public moving_entity
 public:
 	snowboard(float x, float y);
 
-	// Implement the pure virtual functions
 	void update() override;
 	void draw(sf::RenderWindow &window) override;
 

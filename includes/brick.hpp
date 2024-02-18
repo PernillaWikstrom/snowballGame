@@ -15,7 +15,6 @@ public:
 	void degradeColorLevel() noexcept;
 	bool isColorLevelTooLow() const noexcept;
 
-	// Implement the pure virtual functions
 	void update() override;
 	void draw(sf::RenderWindow &window) override;
 };

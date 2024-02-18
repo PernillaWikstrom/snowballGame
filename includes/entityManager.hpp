@@ -60,10 +60,7 @@ public:
 		return *ptr_alias;
 	}
 
-	// Function to scan all entities and clean up the destroyed ones
 	void refresh();
-
-	// Function to destroy all entities
 	void clear();
 
 	// Function to retrieve all the objects of a given type
@@ -83,10 +80,7 @@ public:
 			func(*dynamic_cast<T *>(ptr));
 	}
 
-	// Function to update all the entities
 	void update();
-
-	// Function to make all the entities draw themselves
 	void draw(sf::RenderWindow &window);
 };
 

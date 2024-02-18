@@ -55,6 +55,13 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 
+## Generate html docs
+
+```bash
+cd docs
+doxygen
+```
+
 ## Run
 
 ```bash
