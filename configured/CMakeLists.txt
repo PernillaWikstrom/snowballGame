@@ -1,4 +1,4 @@
 configure_file(
-    "config.hpp.in"
-    "${CMAKE_BINARY_DIR}/configured_files/include/config.hpp" ESCAPE_QUOTES
+    "projectConfig.hpp.in"
+    "${CMAKE_BINARY_DIR}/configured_files/include/projectConfig.hpp" ESCAPE_QUOTES
 )

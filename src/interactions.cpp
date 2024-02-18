@@ -1,5 +1,12 @@
 #include "interactions.hpp"
 
+/**
+ * @brief Checks if two entites intersects
+ * @param e1: entity object
+ * @param e2: entity object
+ * @return true if intersection occur, otherwise false
+ *
+ */
 bool isColliding(const entity &e1, const entity &e2)
 {
 	auto box1 = e1.getBoundingBox();
@@ -8,6 +15,12 @@ bool isColliding(const entity &e1, const entity &e2)
 	return box1.intersects(box2);
 }
 
+/**
+ * @brief Moves the snowball on collision with snowboard
+ * @param snowball: movable entity object
+ * @param snowboard: entity object that may collide with moving entity
+ *
+ */
 void handleCollision(snowball &snowball, const snowboard &snowboard)
 {
 	if (isColliding(snowball, snowboard))
@@ -25,6 +38,14 @@ void handleCollision(snowball &snowball, const snowboard &snowboard)
 	}
 }
 
+/**
+ * @brief Moves the snowball on collision with brick.
+ * If the ball hit the left or right side of the brick, change its horizontal direction,
+ * else if the ball hit the top or bottom of the brick, change its vertical direction.
+ * @param snowball: movable entity object
+ * @param brick: entity object that changes color level on collision
+ *
+ */
 void handleCollision(snowball &snowball, brick &brick)
 {
 	if (isColliding(snowball, brick))
@@ -47,8 +68,6 @@ void handleCollision(snowball &snowball, brick &brick)
 		float minHorizontalOverlap = fromLeft ? leftOverlap : rightOverlap;
 		float minVerticalOverlap = fromTop ? topOverlap : bottomOverlap;
 
-		// If the ball hit the left or right side of the brick, change its horizontal direction
-		// If the ball hit the top or bottom of the brick, change its vertical direction
 		if (std::abs(minHorizontalOverlap) < std::abs(minVerticalOverlap))
 		{
 			if (fromLeft)

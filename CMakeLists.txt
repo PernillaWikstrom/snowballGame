@@ -19,6 +19,7 @@ option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 find_package(SFML 2.5
     COMPONENTS
     system window graphics network audio REQUIRED)
+include(Docs)
 
 add_subdirectory(configured)
 add_subdirectory(src)

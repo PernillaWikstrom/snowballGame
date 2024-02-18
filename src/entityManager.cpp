@@ -3,7 +3,10 @@
 #include "entityManager.hpp"
 #include "interactions.hpp"
 
-// Function to scan all entities and clean up the destroyed ones
+/**
+ * @brief Scan all entities and clean up the destroyed ones
+ *
+ */
 void entityManager::refresh()
 {
 	// We must clean up the alias pointers first, to avoid dangling pointers
@@ -27,13 +30,20 @@ void entityManager::refresh()
 					  end(allEntities));
 }
 
+/**
+ * @brief Destroy all entities, starting by cleaning up the alias pointers.
+ *
+ */
 void entityManager::clear()
 {
-	// Clean up the alias pointers first
 	groupedEntities.clear();
 	allEntities.clear();
 }
 
+/**
+ * @brief Pure virtual function to make all the entities update themselves
+ *
+ */
 void entityManager::update()
 {
 	for (auto &e : allEntities)
@@ -42,6 +52,11 @@ void entityManager::update()
 	}
 }
 
+/**
+ * @brief Pure virtual function to make all the entities draw themselves
+ * @param window: window to draw
+ *
+ */
 void entityManager::draw(sf::RenderWindow &window)
 {
 	for (auto &e : allEntities)
@@ -50,6 +65,10 @@ void entityManager::draw(sf::RenderWindow &window)
 	}
 }
 
+/**
+ * @brief Constructor of the game Manager object
+ *
+ */
 gameManager::gameManager()
 {
 	game_window.setFramerateLimit(config::frameRate);
@@ -69,6 +88,10 @@ gameManager::gameManager()
 	_textLives.setString("Lives: " + std::to_string(_lives));
 }
 
+/**
+ * @brief Resets the game manager to its initial state
+ *
+ */
 void gameManager::reset()
 {
 	_state = gameStates::INACTIVE;
@@ -90,6 +113,10 @@ void gameManager::reset()
 	game_window.setFramerateLimit(config::frameRate);
 }
 
+/**
+ * @brief Updates the game status when the pause key is pressed
+ *
+ */
 void gameManager::updateStatus()
 {
 	if (!_pressedPause)
@@ -110,6 +137,10 @@ void gameManager::updateStatus()
 	}
 }
 
+/**
+ * @brief Run the game manager as long as the game window is open
+ *
+ */
 void gameManager::run()
 {
 

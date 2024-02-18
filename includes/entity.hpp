@@ -10,23 +10,18 @@ protected:
 	bool _destroyed{false};
 
 public:
-	// Pure virtual functions
 	// Concrete graphical entities must implement these functions
-	// The update member function will compute the new position, appearance, etc of the object
-	// The draw member function will cause the updated object to be displayed in the game window
+	// The pure virtual update member function will compute the new position, appearance, etc of the object
 	virtual void update() = 0;
+	// The pure virtual draw member function will cause the updated object to be displayed in the game window
 	virtual void draw(sf::RenderWindow &window) = 0;
 
 	// noexcept for functions that cannot throw
 
-	// Returns bounding rectangle for the sprite
 	sf::FloatRect getBoundingBox() const noexcept;
-	// Returns the center of the sprite
 	sf::Vector2f getCenter() const noexcept;
 
-	// Get x position
 	float x() const noexcept;
-	// Get y position
 	float y() const noexcept;
 
 	float left() const noexcept;
